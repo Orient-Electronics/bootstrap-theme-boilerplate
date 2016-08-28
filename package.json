@@ -6,13 +6,13 @@
   "license": "ISC",
   "scripts": {
     "change-version": "node grunt/change-version.js",
-    "eslint": "eslint --config js/.eslintrc.json js/src",
-    "jscs": "jscs --config=js/.jscsrc js/src js/tests/unit docs/assets/js/src grunt Gruntfile.js docs/assets/js/ie-emulation-modes-warning.js docs/assets/js/ie10-viewport-bug-workaround.js",
+    "eslint": "eslint --config node_modules/bootstrap/js/.eslintrc.json js/src",
+    "jscs": "jscs --config=node_modules/bootstrap/js/.jscsrc node_modules/bootstrap/js/src node_modules/bootstrap/js/tests/unit templates/assets/js/src grunt Gruntfile.js templates/assets/js/ie-emulation-modes-warning.js templates/assets/js/ie10-viewport-bug-workaround.js",
     "htmlhint": "htmlhint --config docs/.htmlhintrc _gh_pages/",
     "postcss": "postcss --config grunt/postcss.js --replace dist/css/*.css",
-    "postcss-docs": "postcss --config grunt/postcss.js --no-map --replace docs/assets/css/docs.min.css && postcss --config grunt/postcss.js --no-map --replace docs/examples/**/*.css",
+    "postcss-docs": "postcss --config grunt/postcss.js --no-map --replace templates/assets/css/docs.min.css && postcss --config grunt/postcss.js --no-map --replace templates/bootstrap/examples/**/*.css",
     "update-shrinkwrap": "npm shrinkwrap --dev && shx mv ./npm-shrinkwrap.json ./grunt/npm-shrinkwrap.json",
-    "test": "grunt test-scss",
+    "test": "npm run eslint && npm run jscs && grunt test",
     "install-bootstrap-source": "rm -rf node_modules/bootstrap && git clone https://github.com/twbs/bootstrap.git node_modules/bootstrap && git -C node_modules/bootstrap checkout tags/v4.0.0-alpha.3"
   },
   "style": "dist/css/bootstrap.css",

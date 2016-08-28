@@ -62,17 +62,17 @@ module.exports = function (grunt) {
           modules: 'ignore'
         },
         files: {
-          'js/dist/util.js'      : 'js/src/util.js',
-          'js/dist/alert.js'     : 'js/src/alert.js',
-          'js/dist/button.js'    : 'js/src/button.js',
-          'js/dist/carousel.js'  : 'js/src/carousel.js',
-          'js/dist/collapse.js'  : 'js/src/collapse.js',
-          'js/dist/dropdown.js'  : 'js/src/dropdown.js',
-          'js/dist/modal.js'     : 'js/src/modal.js',
-          'js/dist/scrollspy.js' : 'js/src/scrollspy.js',
-          'js/dist/tab.js'       : 'js/src/tab.js',
-          'js/dist/tooltip.js'   : 'js/src/tooltip.js',
-          'js/dist/popover.js'   : 'js/src/popover.js'
+          'js/dist/util.js'      : 'node_modules/bootstrap/js/src/util.js',
+          'js/dist/alert.js'     : 'node_modules/bootstrap/js/src/alert.js',
+          'js/dist/button.js'    : 'node_modules/bootstrap/js/src/button.js',
+          'js/dist/carousel.js'  : 'node_modules/bootstrap/js/src/carousel.js',
+          'js/dist/collapse.js'  : 'node_modules/bootstrap/js/src/collapse.js',
+          'js/dist/dropdown.js'  : 'node_modules/bootstrap/js/src/dropdown.js',
+          'js/dist/modal.js'     : 'node_modules/bootstrap/js/src/modal.js',
+          'js/dist/scrollspy.js' : 'node_modules/bootstrap/js/src/scrollspy.js',
+          'js/dist/tab.js'       : 'node_modules/bootstrap/js/src/tab.js',
+          'js/dist/tooltip.js'   : 'node_modules/bootstrap/js/src/tooltip.js',
+          'js/dist/popover.js'   : 'node_modules/bootstrap/js/src/popover.js'
         }
       },
       dist: {
@@ -107,17 +107,17 @@ module.exports = function (grunt) {
       },
       bootstrap: {
         src: [
-          'js/src/util.js',
-          'js/src/alert.js',
-          'js/src/button.js',
-          'js/src/carousel.js',
-          'js/src/collapse.js',
-          'js/src/dropdown.js',
-          'js/src/modal.js',
-          'js/src/scrollspy.js',
-          'js/src/tab.js',
-          'js/src/tooltip.js',
-          'js/src/popover.js'
+          'node_modules/bootstrap/js/src/util.js',
+          'node_modules/bootstrap/js/src/alert.js',
+          'node_modules/bootstrap/js/src/button.js',
+          'node_modules/bootstrap/js/src/carousel.js',
+          'node_modules/bootstrap/js/src/collapse.js',
+          'node_modules/bootstrap/js/src/dropdown.js',
+          'node_modules/bootstrap/js/src/modal.js',
+          'node_modules/bootstrap/js/src/scrollspy.js',
+          'node_modules/bootstrap/js/src/tab.js',
+          'node_modules/bootstrap/js/src/tooltip.js',
+          'node_modules/bootstrap/js/src/popover.js'
         ],
         dest: 'dist/js/<%= pkg.name %>.js'
       }
@@ -137,15 +137,15 @@ module.exports = function (grunt) {
       },
       docsJs: {
         src: configBridge.paths.docsJs,
-        dest: 'docs/assets/js/docs.min.js'
+        dest: 'templates/assets/js/docs.min.js'
       }
     },
 
     qunit: {
       options: {
-        inject: 'js/tests/unit/phantom.js'
+        inject: 'node_modules/bootstrap/js/tests/unit/phantom.js'
       },
-      files: 'js/tests/index.html'
+      files: 'node_modules/bootstrap/js/tests/index.html'
     },
 
     // CSS build configuration
@@ -159,7 +159,7 @@ module.exports = function (grunt) {
         src: ['scss/*.scss', '!scss/_normalize.scss']
       },
       docs: {
-        src: ['docs/assets/scss/*.scss', '!docs/assets/scss/docs.scss']
+        src: ['templates/assets/scss/*.scss', '!templates/assets/scss/docs.scss']
       }
     },
 
@@ -187,9 +187,9 @@ module.exports = function (grunt) {
         files: [
           {
             expand: true,
-            cwd: 'docs/assets/css',
+            cwd: 'templates/assets/css',
             src: ['*.css', '!*.min.css'],
-            dest: 'docs/assets/css',
+            dest: 'templates/assets/css',
             ext: '.min.css'
           }
         ]
@@ -203,7 +203,7 @@ module.exports = function (grunt) {
         src: [
           '**/*'
         ],
-        dest: 'docs/dist/'
+        dest: 'templates/dist/'
       }
     },
 
@@ -260,7 +260,7 @@ module.exports = function (grunt) {
         tasks: ['dist-css', 'docs']
       },
       docs: {
-        files: 'docs/assets/scss/**/*.scss',
+        files: 'templates/assets/scss/**/*.scss',
         tasks: ['dist-css', 'docs']
       }
     },
@@ -387,7 +387,7 @@ module.exports = function (grunt) {
   // grunt.registerTask('sass-compile', ['sass:core', 'sass:extras', 'sass:docs']);
   grunt.registerTask('sass-compile', ['sass:core', 'sass:docs']);
 
-  grunt.registerTask('dist-css', ['sass-compile', 'exec:postcss', 'cssmin:core', 'cssmin:docs']);
+  grunt.registerTask('dist-css', ['sass-compile', 'cssmin:core', 'cssmin:docs']);
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean:dist', 'dist-css', 'dist-js']);
