@@ -1,5 +1,7 @@
 # Bootstrap Theme Boilerplate
 
+[![Build Status](https://travis-ci.org/Orient-Electronics/bootstrap-theme-boilerplate.svg)](https://travis-ci.org/Orient-Electronics/bootstrap-theme-boilerplate)
+
 This is a boilerplate to create custom CSS themes for Bootstrap 4 framework.
 
 ## About Bootstrap
