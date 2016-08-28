@@ -10,6 +10,26 @@ To get started, check out <http://getbootstrap.com>!
 ## Quick start
 Install with [npm](https://www.npmjs.com): `npm install Orient-Electronics/bootstrap-theme-boilerplate`
 
+## Setup for Development
+
+Run the following commands in your terminal:
+
+1. `git clone https://github.com/Orient-Electronics/bootstrap-theme-boilerplate.git && cd bootstrap-theme-boilerplate`
+2. `npm i`
+
+## File Structure
+
+```
+dist/ <- Contains compiled code. Don't edit anything in this folder!
+scss/
+├── custom/ <- SCSS modules for non-Bootstrap components.
+├── overrides/ <- SCSS modules that override or extend Bootstrap components.
+└── bootstrap.scss <- Primary entry point that defines all imports.
+templates/ <- Demo Templates
+├── page.md <- A sample page template
+└── bootstrap <- Directory with Bootstrap doc pages, to test theme
+```
+
 ## Documentation
 
 Bootstrap's documentation, included in this repo in the root directory, is built with [Jekyll](http://jekyllrb.com). The docs may also be run locally.
