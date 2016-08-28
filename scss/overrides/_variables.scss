@@ -1,0 +1,27 @@
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+// $enable-flex:               false !default;
+// $enable-rounded:            true !default;
+// $enable-shadows:            false !default;
+$enable-gradients:          true;
+$enable-transitions:        true;
+// $enable-hover-media-query:  false !default;
+// $enable-grid-classes:       true !default;
+// $enable-print-styles:       true !default;
+
+
+
+// Colors
+//
+// Grayscale and brand colors for use across Bootstrap.
+
+$gray-dark:                 #333;
+$gray:                      #666;
+$gray-light:                #999;
+$gray-lighter:             	#d6d6d6;
+$gray-lightest:             #e3e3e3;
+
+$brand-primary:             #08c;
