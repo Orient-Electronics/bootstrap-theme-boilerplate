@@ -8,7 +8,7 @@ Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and
 To get started, check out <http://getbootstrap.com>!
 
 ## Quick start
-Install with [npm](https://www.npmjs.com): `npm install bootstrap@4.0.0-alpha.3`
+Install with [npm](https://www.npmjs.com): `npm install Orient-Electronics/bootstrap-theme-boilerplate`
 
 ## Documentation
 
