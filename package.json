@@ -13,7 +13,8 @@
     "postcss-docs": "postcss --config grunt/postcss.js --no-map --replace templates/assets/css/docs.min.css && postcss --config grunt/postcss.js --no-map --replace templates/bootstrap/examples/**/*.css",
     "update-shrinkwrap": "npm shrinkwrap --dev && shx mv ./npm-shrinkwrap.json ./grunt/npm-shrinkwrap.json",
     "test": "npm run eslint && npm run jscs && grunt test",
-    "install-bootstrap-source": "rm -rf node_modules/bootstrap && git clone https://github.com/twbs/bootstrap.git node_modules/bootstrap && git -C node_modules/bootstrap checkout tags/v4.0.0-alpha.3"
+    "install-bootstrap-source": "rm -rf node_modules/bootstrap && git clone https://github.com/twbs/bootstrap.git node_modules/bootstrap && git -C node_modules/bootstrap checkout tags/v4.0.0-alpha.3",
+    "postinstall": "npm run install-bootstrap-source"
   },
   "style": "dist/css/bootstrap.css",
   "sass": "scss/bootstrap.scss",
@@ -24,9 +25,6 @@
   },
   "bugs": {
     "url": "https://github.com/twbs/bootstrap/issues"
-  },
-  "dependencies": {
-    "bootstrap": "twbs/bootstrap.git#v4.0.0-alpha.3"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.3",

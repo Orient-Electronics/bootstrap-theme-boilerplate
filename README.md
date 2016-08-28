@@ -33,7 +33,6 @@ To get started run the following commands in your terminal:
 
 1. `git clone https://github.com/Orient-Electronics/bootstrap-theme-boilerplate.git && cd bootstrap-theme-boilerplate`
 2. `npm i`
-3. `npm run install-bootstrap-source`
 
 
 ## Tooling setup
